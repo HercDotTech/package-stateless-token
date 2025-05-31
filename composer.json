@@ -1,0 +1,32 @@
+{
+  "name": "hercdottech/stateless-token",
+  "description": "A composer package to generate and validate stateless tokens",
+  "type": "library",
+  "license": "GPL-3.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "HercDotTech\\Stateless\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HercDotTech\\Stateless\\Test\\": "test/"
+    }
+  },
+  "authors": [
+    {
+      "name": "HercDotTech",
+      "email": "office@herc.tech"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.3",
+    "ext-json": "*",
+    "ext-hash": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.1",
+    "friendsofphp/php-cs-fixer": "^3.75"
+  }
+}

@@ -1,0 +1,23 @@
+define: &name "Package - hercdottech/stateless-token"
+
+kind: pipeline
+type: docker
+name: *name
+
+steps:
+  - name: Install dependencies
+    image: composer
+    commands:
+      - composer install
+
+  - name: Check PHP CS
+    image: php:8.4
+    environment:
+      PHP_CS_FIXER_IGNORE_ENV: true
+    commands:
+      - vendor/bin/php-cs-fixer --dry-run fix src
+
+  - name: Run PHP Unit tests
+    image: php:8.4
+    commands:
+      - vendor/bin/phpunit --configuration phpunit.xml.dist
